@@ -1,0 +1,15 @@
+{
+  "name": "Accessifizr",
+  "platform": "HTML",
+  "version": "",
+  "author": "Esri R&D Center Beijing",
+  "description": "",
+  "copyright": "",
+  "license": "http://www.apache.org/licenses/LICENSE-2.0",
+  "properties": {
+    "inPanel": false,
+    "hasConfig": true,
+    "hasStyle": false,
+    "hasUIFile": false
+  }
+}
