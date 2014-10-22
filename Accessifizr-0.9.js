@@ -13,8 +13,9 @@ define([
 "dojo/dom-class",
 "dojo/Deferred",
 "dijit/focus",
+"dojo/i18n!./nls/strings",
 "dojo/domReady!"],
-function (declare, lang, topic, dom, query, domAttr, domConstruct, JSON, on, keys, array, domClass, Deferred, focusUtil) {               
+function (declare, lang, topic, dom, query, domAttr, domConstruct, JSON, on, keys, array, domClass, Deferred, focusUtil, i18n) {               
 	return{
 	init: function(args){
 			options = {"exemptTags": ["B","BR"],"exemptClasses":["layerTile"], "applyAria": false};
@@ -85,6 +86,9 @@ function (declare, lang, topic, dom, query, domAttr, domConstruct, JSON, on, key
 			var process = aSyncProcess(object, false);
 			process.then(dojo.hitch(this, function(createdObject){
 				query(createdObject.id).forEach(function(node){
+					if (i18n[createdObject.id]){
+						domAttr.set(node,"alt",i18n[createdObject.id]);
+					}
 					if (lang.exists('gridConfig',createdObject)){
 						if (createdObject.gridConfig.type == "dgrid"){
 							query("[tabindex=0]",query(createdObject.id)[0]).forEach(function(_node){
