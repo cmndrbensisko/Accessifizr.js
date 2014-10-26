@@ -17,6 +17,17 @@
         $('#main_content').headsmart()
       })
     </script>
+    <script type="text/javascript">
+        var dojoConfig = {
+            baseUrl: "./javascript/"
+        }
+    </script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/dojo/1.8/dojo/dojo.js"></script>
+    <script>
+        require(["javascript/accessifizr","dojo/text!javascript/handlebars.json", "dojo/domReady!"], function(Accessifizr, data) {
+            Accessifizr.init({"data": data});
+        });
+    </script>
     <title>Accessifizr.js by cmndrbensisko</title>
   </head>
 
