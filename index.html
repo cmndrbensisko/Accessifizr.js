@@ -19,12 +19,12 @@
     </script>
     <script type="text/javascript">
         var dojoConfig = {
-            baseUrl: "./javascript/"
+            baseUrl: "./javascripts/"
         }
     </script>
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/dojo/1.8/dojo/dojo.js"></script>
     <script>
-        require(["javascript/accessifizr","dojo/text!javascript/handlebars.json", "dojo/domReady!"], function(Accessifizr, data) {
+        require(["javascripts/accessifizr.min","dojo/text!javascripts/handlebars.json", "dojo/domReady!"], function(Accessifizr, data) {
             Accessifizr.init({"data": data});
         });
     </script>
