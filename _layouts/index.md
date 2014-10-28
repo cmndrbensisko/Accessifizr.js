@@ -2,7 +2,7 @@
 layout: index
 ---
 
-Accessifizr 0.9b
+Accessifizr 0.95b
 ==
 
 Accessifizr is a Dojo plugin intended to quickly make web applications tab navigable and compliant with AODA/Section 508 accessibility standards without having to massively modify core application code and UI.  Originally developed for use with ESRI Javascript Templates, additional functionality is planned to be rolled into the application with future releases.
