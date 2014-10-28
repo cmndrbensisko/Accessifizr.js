@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=640">
+
+    <link rel="stylesheet" href="{{ site.path }}/stylesheets/core.css" media="screen">
+    <link rel="stylesheet" href="{{ site.path }}/stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)">
+    <link rel="stylesheet" href="{{ site.path }}/stylesheets/pygment_trac.css">
+
+    <script type="text/javascript" src="{{ site.path }}/javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ site.path }}/javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <script type="text/javascript">
+        var dojoConfig = {
+            baseUrl: "./javascripts/"
+        }
+    </script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/dojo/1.8/dojo/dojo.js"></script>
+    <script>
+        require(["javascripts/accessifizr.min","dojo/text!javascripts/handlebars.json", "dojo/domReady!"], function(Accessifizr, data) {
+            Accessifizr.init({"data": data});
+        });
+    </script>
+    <title>Accessifizr.js by cmndrbensisko</title>
+  </head>
+
+  <body>
+    <a id="forkme_banner" href="https://github.com/cmndrbensisko/Accessifizr.js">View on GitHub</a>
+    <div class="shell">
+
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>Accessifizr.js</h1>
+            <h2>Accessifizr is a Dojo plugin intended to quickly make web applications tab navigable and compliant with AODA/Section 508 accessibility standards without having to massively modify core application code and UI.</h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
+
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/cmndrbensisko/Accessifizr.js/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/cmndrbensisko/Accessifizr.js/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
+
+
+      <span class="banner-fix"></span>
+
+
+      <section id="main_content">
+{{ content }}
+      </section>
+
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/cmndrbensisko">cmndrbensisko</a> can be found on <a href="https://github.com/cmndrbensisko/Accessifizr.js">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="http://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
+      </footer>
+
+    </div>
+
+    
+  </body>
+</html>
