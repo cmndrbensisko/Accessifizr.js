@@ -277,6 +277,47 @@ Not all objects specified in the handlebars.json file need to be unique identifi
     }
     ...
 
+Alt Text:
+--
+
+Some elements in a single-page website may require alternative text to be provided to clearly state the purpose of the element.  Good examples of this would be icon-based buttons whose purpose may be self-evident to a sighted user, but which might require additional description to be of use to a user requiring assistive technologies.
+
+Accessifizr leverages the i18n dojo module to allow you to apply descriptive text via the 'alt' property to page elements in a similar way to how tabIndexes are applied.  Simply create an /nls/ subfolder in the directory containing accessifizr.js, and include a strings.js file containing 1) a root object containing key-value pairs for the unique-identifiers you've chosen for your page elements in handlebars.json, and the alternative text that you would like applied to the element, and 2) standard i18n nontation for any additional languages you'd like your application to support, to be coupled with the appropriate subfolder structure necessary for i18n functionality.  More information can be found on the dojo i18n documentation located at http://dojotoolkit.org/reference-guide/dojo/i18n.html.
+
+## Example #8:
+
+    define({
+      root: {
+        "[settingid='widgets/Legend/Widget_14']": "Click To Activate Legend Tool",
+        "[settingid='widgets/Chart/Widget_15']": "Click To Activate Chart Tool"
+      },
+      "ar": false,
+      "cs": true,
+      "da": true,
+      "de": true,
+      "es": true,
+      "et": true,
+      "fi": true,
+      "fr": true,
+      "he": false,
+      "it": true,
+      "ja": true,
+      "ko": true,
+      "lt": true,
+      "lv": true,
+      "nb": true,
+      "nl": true,
+      "pl": true,
+      "pt-br": true,
+      "pt-pt": true,
+      "ro": true,
+      "ru": true,
+      "sv": true,
+      "th": true,
+      "tr": true,
+      "zh-cn": true
+    });
+
 Screen Reader Compatibility:
 --
 
