@@ -353,7 +353,7 @@ Accessifizr can attempt to apply appropriate Aria tagging to Tab Navigable eleme
 
 >		<script type="text/javascript">
 >			require(["js/Accessifizr-0.9","dojo/text!js/handlebars.json", "dojo/domReady!"], function(Accessifizr, data) {
->				Accessifizr.init({"data": data,<b>"applyAria": true</b>});
+>				Accessifizr.init({"data": data,"applyAria": true});
 >			});
 >		</script>
 
@@ -366,10 +366,10 @@ Currently, Accessifizr has beta support for Dojo dGrid elements.  To apply a Tab
     {  
         "id":"#grid",
         "tab":"4",
-        "gridConfig":{  
+        <b>"gridConfig":{  
             "type":"dgrid"
-        }
+        }</b>
     }
 </pre>
 
-Future support will allow for appropariate Aria styling and keyboard navigation within basic <code><table></code> elements.
+Future support will allow for appropariate Aria styling and keyboard navigation within basic Table elements.
