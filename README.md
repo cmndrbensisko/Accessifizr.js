@@ -31,11 +31,11 @@ It is responsible for outlining the default Tab Navigation of your application, 
             [  
                 {  
                 "id":"#firstControl",
-                <b>"tab":1</b>
+                <b><i>"tab":1</i></b>
     			},
     			{  
     				"id":"#secondControl",
-    				<b>"tab":2</b>
+    				<b><i>"tab":2</i></b>
     			}
     		]
        }
@@ -55,7 +55,7 @@ Page Elements are deferred, meaning that you can specify rules for page elements
                 {  
                     "id":"#firstControl",
                     "tab":1,
-                    <b>"clickModes":"click,keyup[13|32]",
+                    <b><i>"clickModes":"click,keyup[13|32]",
                     "onClick":{  
                         "objects": 
                             [  
@@ -64,7 +64,7 @@ Page Elements are deferred, meaning that you can specify rules for page elements
                                     "tab":3
                                 }
                             ]
-                        }</b>
+                        }</i></b>
                 },
                 {  
                     "id":"#secondControl",
@@ -95,9 +95,9 @@ A business case for this would be when you have an input field and a separate bu
 <pre>
     {
         "id":"#inputField",
-        <b>"clickModes":"keyup[13]",
+        <b><i>"clickModes":"keyup[13]",
         "clickControl":"#searchButton",
-        "clickControlEvt":"click",</b>
+        "clickControlEvt":"click",</i></b>
         "tab":1,
         "onClick":{}
     }
@@ -115,7 +115,7 @@ By default, an "onClick" interaction will removeremove all elements from the cur
 <pre>
     ...
     "onClick":{
-        <b>"preserveTabs":true,</b>
+        <b><i>"preserveTabs":true,</i></b>
         "objects":
             [  
                 {  
@@ -139,9 +139,9 @@ Example #4:
     ...
     "onClick":{
         "preserveTabs":false,
-        <b>"focus":{  
+        <b><i>"focus":{  
             "id":"#thirdControl"
-        },</b>
+        },</i></b>
         "objects":
             [  
                 {  
@@ -183,7 +183,7 @@ Occasionally, as in the case of single-page applications with full-screen modal 
                                     "clickModes":"click,keyup[13|32]",
                                     "onClick":{
                                         "preserveTabs":false,
-                                        <b>"back":1,</b>
+                                        <b><i>"back":1,</i></b>
                                         "focus":{  
                                             "id":"#firstControl"
                                         }
@@ -220,11 +220,11 @@ Your keyboard-navigating users may find needing to explicitly tab to and activat
         "focus":{  
             "id":"#thirdControl"
         },
-        <b>"escModes":"keyup[27]",
+        <b><i>"escModes":"keyup[27]",
         "onEsc":{  
             "escControl":"#closeControl",
             "escControlEvt":"click"
-        }</b>,
+        }</i></b>,
         "objects":
             [  
                 {
@@ -265,7 +265,7 @@ Not all objects specified in the handlebars.json file need to be unique identifi
         "objects":
             [  
                 {  
-                <b>"id":".searchResult",</b>
+                <b><i>"id":".searchResult",</i></b>
                 "tab":"3",
                 "clickModes":"click,keyup[13]",
                 "clickControl":"self",
@@ -366,9 +366,9 @@ Currently, Accessifizr has beta support for Dojo dGrid elements.  To apply a Tab
     {  
         "id":"#grid",
         "tab":"4",
-        <b>"gridConfig":{  
+        <b><i>"gridConfig":{  
             "type":"dgrid"
-        }</b>
+        }</i></b>
     }
 </pre>
 
