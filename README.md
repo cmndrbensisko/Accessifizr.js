@@ -8,11 +8,13 @@ Basic Usage
 
 The current release of Accessifizr is Dojo-powered, so if your application does not currently use the dojo package, it will still need to be imported into your application to use the plugin.  Accessifizr can be quickly loaded into an application as a normal Dojo module, and initiated within your code with a few startup parameters.
 
->		<script type="text/javascript">
->			require(["js/Accessifizr-0.9","dojo/text!js/handlebars.json", "dojo/domReady!"], function(Accessifizr, data) {
->				Accessifizr.init({"data": data});
->			});
->		</script>
+<pre>
+		<script type="text/javascript">
+			require(["js/Accessifizr-0.9","dojo/text!js/handlebars.json", "dojo/domReady!"], function(Accessifizr, data) {
+				Accessifizr.init({"data": data});
+			});
+		</script>
+</pre>
 
 handlebars.json
 --
@@ -25,20 +27,22 @@ It is responsible for outlining the default Tab Navigation of your application, 
 
 ### Example #1:
 
+<pre>
     {"tabOrder":
         {"objects":
             [  
                 {  
                 "id":"#firstControl",
-                "tab":1
+                <b>"tab":1</b>
     			},
     			{  
     				"id":"#secondControl",
-    				"tab":2
+    				<b>"tab":2</b>
     			}
     		]
        }
     }
+</pre>
 
 The above example will, on domReady!, apply a tabIndex of 1 to a control with the id "firstControl", and a tabIndex of 2 to a control with the id "secondControl".  
 
@@ -46,13 +50,14 @@ Page Elements are deferred, meaning that you can specify rules for page elements
 
 ### Example #2:
 
+<pre>
     {"tabOrder":
         {"objects":
             [  
                 {  
                     "id":"#firstControl",
                     "tab":1,
-                    "clickModes":"click,keyup[13|32]",
+                    <b>"clickModes":"click,keyup[13|32]",
                     "onClick":{  
                         "objects": 
                             [  
@@ -61,7 +66,7 @@ Page Elements are deferred, meaning that you can specify rules for page elements
                                     "tab":3
                                 }
                             ]
-                        }
+                        }</b>
                 },
                 {  
                     "id":"#secondControl",
@@ -70,6 +75,7 @@ Page Elements are deferred, meaning that you can specify rules for page elements
             ]
         }
     }
+</pre>
 
 Typically, if created without the intention of keyboard accessibility, an application's elements will be activated via 'click' events.  The 'onClick' property tells Accessifizr what to do when a page element is interacted with by a user.  It must be paired with the "clickModes" property, which tells Accessifizr which events should be interpreted as the element being 'clicked'.  
 
@@ -88,14 +94,16 @@ Occasionally, you may not want events on one page element to activate any functi
 
 A business case for this would be when you have an input field and a separate button that activates a search, and you want an enter event in the input field to execute the search.  In this case, you would set up the input field object as follows in your handlebars file.  Note the empty "onClick" property, as all onClick events would actually be handled by the delegated clickControl.
 
+<pre>
     {
         "id":"#inputField",
-        "clickModes":"keyup[13]",
+        <b>"clickModes":"keyup[13]",
         "clickControl":"#searchButton",
-        "clickControlEvt":"click",
+        "clickControlEvt":"click",</b>
         "tab":1,
         "onClick":{}
     }
+</pre>
 
 In the above example, a "keyup" event on the Enter key (keycode 13), will result in a "click" event being dispatched to the "searchButton" element.
 
@@ -106,9 +114,10 @@ By default, an "onClick" interaction will removeremove all elements from the cur
 
 ## Example #3:
 
+<pre>
     ...
     "onClick":{
-        "preserveTabs":true,  
+        <b>"preserveTabs":true,</b>
         "objects":
             [  
                 {  
@@ -118,6 +127,7 @@ By default, an "onClick" interaction will removeremove all elements from the cur
             ]
     }
     ...
+</pre>
 
 Applying Focus:
 --
@@ -127,12 +137,13 @@ Occasionally, you might want a page interaction to focus a new element for the b
 Example #4:
 --
 
+<pre>
     ...
     "onClick":{
         "preserveTabs":false,
-        "focus":{  
+        <b>"focus":{  
             "id":"#thirdControl"
-        },
+        },</b>
         "objects":
             [  
                 {  
@@ -142,6 +153,7 @@ Example #4:
             ]
     }
     ...
+</pre>
 
 Note the wrapper; the focus property accepts an object containing an id key/value pair, just like in the "objects" property, not just a CSS selector.
 
@@ -152,6 +164,7 @@ Occasionally, as in the case of single-page applications with full-screen modal 
 
 ### Example #5:
 
+<pre>
     {"tabOrder":{
         "objects":
             [  
@@ -172,7 +185,7 @@ Occasionally, as in the case of single-page applications with full-screen modal 
                                     "clickModes":"click,keyup[13|32]",
                                     "onClick":{
                                         "preserveTabs":false,
-                                        "back":1,
+                                        <b>"back":1,</b>
                                         "focus":{  
                                             "id":"#firstControl"
                                         }
@@ -188,6 +201,7 @@ Occasionally, as in the case of single-page applications with full-screen modal 
             ]
         }
     }
+</pre>
 
 In the example above, when the thirdControl is clicked, or a keyup event is recieved on that element from the Enter Key or the Spacebar, Accessifizr will float up "1" level to the surrounding "objects" array and re-apply the Tab Navigation rules to firstControl and secondControl.  If you have a deeply nested mode, and need to reapply rules from several 'steps' up, the value of "back" corresponds to the number of nests to migrate up.
 
@@ -198,6 +212,7 @@ Your keyboard-navigating users may find needing to explicitly tab to and activat
 
 ## Example #6:
 
+<pre>
     ...
     "id":"#originalControl",
     "tab":1,
@@ -207,11 +222,11 @@ Your keyboard-navigating users may find needing to explicitly tab to and activat
         "focus":{  
             "id":"#thirdControl"
         },
-        "escModes":"keyup[27]",
+        <b>"escModes":"keyup[27]",
         "onEsc":{  
             "escControl":"#closeControl",
             "escControlEvt":"click"
-        },
+        }</b>,
         "objects":
             [  
                 {
@@ -232,6 +247,7 @@ Your keyboard-navigating users may find needing to explicitly tab to and activat
             ]
     }
     ...
+</pre>
 
 This might look a little confusing at first, so let's step through what's going on.  First, we've wired up the "closeControl" element to be our actual close control.  Clicking or keying up with Enter or Space on this element will result in the previous tabOrder being re-applied to the application, and focus landing back on the "originalControl" element.
 
@@ -244,13 +260,14 @@ Not all objects specified in the handlebars.json file need to be unique identifi
 
 ## Example #7:
 
+<pre>
     ...
     "onClick":{  
         "preserveTabs":true,
         "objects":
             [  
                 {  
-                "id":".searchResult",
+                <b>"id":".searchResult",</b>
                 "tab":"3",
                 "clickModes":"click,keyup[13]",
                 "clickControl":"self",
@@ -276,6 +293,7 @@ Not all objects specified in the handlebars.json file need to be unique identifi
         ]
     }
     ...
+</pre>
 
 Alt Text:
 --
@@ -286,6 +304,7 @@ Accessifizr leverages the i18n dojo module to allow you to apply descriptive tex
 
 ## Example #8:
 
+<pre>
     define({
       root: {
         "[settingid='widgets/Legend/Widget_14']": "Click To Activate Legend Tool",
@@ -317,6 +336,7 @@ Accessifizr leverages the i18n dojo module to allow you to apply descriptive tex
       "tr": true,
       "zh-cn": true
     });
+</pre>
 
 Screen Reader Compatibility:
 --
@@ -333,17 +353,20 @@ Aria:
 
 Accessifizr can attempt to apply appropriate Aria tagging to Tab Navigable elements, and hide non-participating elements from screen readers.  To enable this capability, which should work for modern Desktop screenreaders but is not currently supported for all Mobile devices (Notably anything below Android 4.4 and iOS 6), add the following key value pair to your accessifizr.Init parameter:
 
->		<script type="text/javascript">
->			require(["js/Accessifizr-0.9","dojo/text!js/handlebars.json", "dojo/domReady!"], function(Accessifizr, data) {
->				Accessifizr.init({"data": data, "applyAria": true});
->			});
->		</script>
+<pre>
+		<script type="text/javascript">
+			require(["js/Accessifizr-0.9","dojo/text!js/handlebars.json", "dojo/domReady!"], function(Accessifizr, data) {
+				Accessifizr.init({"data": data,<b>"applyAria": true</b>});
+			});
+		</script>
+</pre>
 
 Grids:
 --
 
 Currently, Accessifizr has beta support for Dojo dGrid elements.  To apply a TabIndex to a Dojo dGrid, specify an object in your Handlebars file as follows:
 
+<pre>
     {  
         "id":"#grid",
         "tab":"4",
@@ -351,5 +374,6 @@ Currently, Accessifizr has beta support for Dojo dGrid elements.  To apply a Tab
             "type":"dgrid"
         }
     }
+</pre>
 
-Future support will allow for appropariate Aria styling and keyboard navigation within basic <table> elements.
+Future support will allow for appropariate Aria styling and keyboard navigation within basic <code><table></code> elements.
