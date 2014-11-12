@@ -2,20 +2,16 @@
     {"objects":
         [  
             {  
-                "id":".ribbon-inner > h1",
+                "id":"header *:not(strong):not(small):not(ul):not(li):not(.view)",
                 "tab":1
             },
             {  
-                "id":".ribbon-inner > h2",
+                "id":"section *:not(b):not(i):not(span):not(blockquote)",
                 "tab":2
             },
             {  
-                "id":".zip",
-                "tab":4
-            },
-            {  
-                "id":".tgz",
-                "tab":4
+                "id":"footer *",
+                "tab":3
             }
         ]
    }

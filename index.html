@@ -11,6 +11,17 @@
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    <script type="text/javascript">
+        var dojoConfig = {
+            baseUrl: "./javascripts/"
+        }
+    </script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/dojo/1.8/dojo/dojo.js"></script>
+    <script>
+        require(["javascripts/accessifizr.min","dojo/text!javascripts/handlebars.json", "dojo/domReady!"], function(Accessifizr, data) {
+            Accessifizr.init({"data": data});
+        });
+    </script>
   </head>
   <body>
     <div class="wrapper">
