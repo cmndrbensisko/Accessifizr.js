@@ -1,0 +1,18 @@
+{"tabOrder":
+    {"objects":
+        [  
+            {  
+                "id":"header *:not(strong):not(small):not(ul):not(li):not(.view)",
+                "tab":1
+            },
+            {  
+                "id":"section *:not(b):not(i):not(span):not(blockquote)",
+                "tab":2
+            },
+            {  
+                "id":"footer *",
+                "tab":3
+            }
+        ]
+   }
+}
