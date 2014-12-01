@@ -9,7 +9,7 @@ Basic Usage
 The current release of Accessifizr is Dojo-powered, so if your application does not currently use the dojo package, it will still need to be imported into your application to use the plugin.  Accessifizr can be quickly loaded into an application as a normal Dojo module, and initiated within your code with a few startup parameters.
 
 >		<script type="text/javascript">
->			require(["js/Accessifizr-0.9","dojo/text!js/handlebars.json", "dojo/domReady!"], function(Accessifizr, data) {
+>			require(["js/Accessifizr-1.0","dojo/text!js/handlebars.json", "dojo/domReady!"], function(Accessifizr, data) {
 >				Accessifizr.init({"data": data});
 >			});
 >		</script>
@@ -352,7 +352,7 @@ Aria:
 Accessifizr can attempt to apply appropriate Aria tagging to Tab Navigable elements, and hide non-participating elements from screen readers.  To enable this capability, which should work for modern Desktop screenreaders but is not currently supported for all Mobile devices (Notably anything below Android 4.4 and iOS 6), add the following key value pair to your accessifizr.Init parameter:
 
 >		<script type="text/javascript">
->			require(["js/Accessifizr-0.9","dojo/text!js/handlebars.json", "dojo/domReady!"], function(Accessifizr, data) {
+>			require(["js/Accessifizr-1.0","dojo/text!js/handlebars.json", "dojo/domReady!"], function(Accessifizr, data) {
 >				Accessifizr.init({"data": data,"applyAria": true});
 >			});
 >		</script>
