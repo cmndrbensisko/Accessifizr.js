@@ -1,0 +1,37 @@
+﻿{   
+    "exemptTags":
+        [
+            "B", 
+            "EM", 
+            "I", 
+            "SMALL", 
+            "STRONG", 
+            "SUB", 
+            "SUP", 
+            "INS", 
+            "DEL", 
+            "MARK", 
+            "BR"
+        ],
+    "exemptIDs":
+        [
+            "staticButton"
+        ],
+    "exemptClasses":
+        [
+            "layerTile"
+        ],
+    "applyAria":true,
+    "tabOrder":
+        {
+            "preserveTabs":false,
+            "inModal":false,
+            "objects":
+            [  
+                {
+                    "id":".sideHdrTitle.appThemeInverted",
+                    "tab":0
+                }
+            ]
+       }
+}
