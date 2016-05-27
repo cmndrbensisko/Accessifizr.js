@@ -47,6 +47,9 @@ define(["dojo/_base/declare", "dojo/_base/lang", "dojo/topic", "dojo/dom", "dojo
 	}
 	return returnValue;
   }
+  function reinitTabs(){
+    assignTabs(parseData.tabOrder);
+  };
   function assignTabs(tabOrder) {
 	if (lang.exists("preserveTabs", tabOrder)) {
 	  if (!tabOrder.preserveTabs) {
@@ -140,11 +143,14 @@ define(["dojo/_base/declare", "dojo/_base/lang", "dojo/topic", "dojo/dom", "dojo
 	return node.nodeName == "IMG" && !domClass.contains(node, "layerTile") && !domClass.contains(node, "canBeHidden") && !domClass.contains(node, "alwaysHidden");
   }
   function clearTabs() {
-	for (i = 0;i <= 10;i++) {
+	for (i = 0;i <= 100;i++) {
 	  query('[tabIndex="' + i + '"]', document.body).forEach(function(node) {
 		setTabs(node, -1);
 	  });
 	}
+	clearHandlers();
+  }
+  function clearHandlers(){
 	array.forEach(handlerBus, function(handler) {
 	  handler.remove();
 	});
