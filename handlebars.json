@@ -1,4 +1,28 @@
-﻿{"tabOrder":
+{
+    "exemptTags":
+        [
+            "B", 
+            "EM", 
+            "I", 
+            "SMALL", 
+            "STRONG", 
+            "SUB", 
+            "SUP", 
+            "INS", 
+            "DEL", 
+            "MARK", 
+            "BR"
+        ],
+    "exemptIDs":
+        [
+            "staticButton"
+        ],
+    "exemptClasses":
+        [
+            "layerTile"
+        ],
+    "applyAria":true,
+    "tabOrder":
     {
         "preserveTabs":false,
         "inModal":false,
